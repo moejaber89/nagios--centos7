@@ -57,5 +57,5 @@ make install
 systemctl restart nagios
 clear
 systemctl status nagios
-ip a show enp0s3
+ip a | grep inet | grep 192
 echo " open your web browser in the URL section type your centos ip address follow with/nagios"
