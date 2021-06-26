@@ -6,10 +6,7 @@ sudo sed -i 's/SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config
 sudo yum update
 # install required packaging
 sudo yum install -y curl gcc glibc glibc-common wget unzip httpd php gd gd-devel perl postfix
-cd
-# create folder for nagios and install all packages in
-sudo mkdir ~/nagios
-cd ~/nagios
+cd /usr/scr
 # download nagios source file
 sudo wget -O nagioscore.tar.gz https://github.com/NagiosEnterprises/nagioscore/archive/nagios-4.4.5.tar.gz
 # unzip the tar file
@@ -45,7 +42,7 @@ sudo systemctl restart httpd
 # install nagios plugins and packaging
 sudo yum install -y gcc glibc glibc-common make gettext automake autoconf wget openssl-devel net-snmp net-snmp-utils epel-release
 sudo yum install -y perl-Net-SNMP
-cd .. 
+cd /usr/scr
 sudo wget --no-check-certificate -O nagios-plugins.tar.gz https://github.com/nagios-plugins/nagios-plugins/archive/release-2.2.1.tar.gz
 sudo tar xzf nagios-plugins.tar.gz
 sudo rm -rf nagios-plugins.tar.gz
