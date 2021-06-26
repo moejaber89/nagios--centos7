@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# must be root for the installation
+su - root
 # disable selinux 
 sed -i 's/SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config
 # you could disable it manually check the manual page if you want to
@@ -57,6 +59,8 @@ make install
 systemctl restart nagios
 clear
 systemctl status nagios
+echo
+echo
 ip a | grep inet | grep 192
 echo " open your web browser in the URL section type your centos ip address follow with/nagios"
 echo " username: nagiosadmin "
