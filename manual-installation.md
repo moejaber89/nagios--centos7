@@ -8,7 +8,7 @@
 or your could disable it manually thru vi /etc/selinux/config       then
 change what after selinux= to disable  there is two of them
 2) update the system then install all required pacages
-#y um update 
+# yum update 
 # yum install -y curl gcc glibc glibc-common wget unzip httpd php gd gd-devel perl postfix
 pacages explanations:
 GCC stands for GNU Compiler Collections which is used to compile mainly C and C++ language. It can also be used to compile Objective C and Objective C++
@@ -81,3 +81,4 @@ nagiosadmin then the password
 18) open the web browser then re inter ip address/nagios
 insert you username and password
 192.168.x.xx/nagios in your url web browser
+you could copy whats come after # only and it should do the job
