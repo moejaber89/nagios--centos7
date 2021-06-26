@@ -6,11 +6,13 @@ sed -i 's/SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config
 yum update
 # install required packaging
 yum install -y curl gcc glibc glibc-common wget unzip httpd php gd gd-devel perl postfix
-cd /usr/src
+mkdir /root/nagios-controller
+cd /root/nagios-controller
 # download nagios source file
 wget -O nagioscore.tar.gz https://github.com/NagiosEnterprises/nagioscore/archive/nagios-4.4.5.tar.gz
 # unzip the tar file
 tar xzf nagioscore.tar.gz
+rm -rf nagioscore.tar.gz
 cd nagioscore-nagios-4.4.5
 # compiling nagios
 ./configure
@@ -41,9 +43,10 @@ systemctl restart httpd
 # install nagios plugins and packaging
 yum install -y gcc glibc glibc-common make gettext automake autoconf wget openssl-devel net-snmp net-snmp-utils epel-release
 yum install -y perl-Net-SNMP
-cd /usr/src
+cd /root/nagios-controller
 wget --no-check-certificate -O nagios-plugins.tar.gz https://github.com/nagios-plugins/nagios-plugins/archive/release-2.2.1.tar.gz
 tar xzf nagios-plugins.tar.gz
+rm -rf nagios-plugins.tar.gz
 cd nagios-plugins-release-2.2.1
 # compile and install nagios plugin
 ./tools/setup
@@ -55,4 +58,4 @@ systemctl restart nagios
 clear
 systemctl status nagios
 ip a show enp0s3
-echo " open your web browser in the url section type your centos ip address follow with/nagios"
+echo " open your web browser in the URL section type your centos ip address follow with/nagios"
