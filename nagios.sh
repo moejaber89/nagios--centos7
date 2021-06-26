@@ -11,7 +11,6 @@ cd /usr/src
 sudo wget -O nagioscore.tar.gz https://github.com/NagiosEnterprises/nagioscore/archive/nagios-4.4.5.tar.gz
 # unzip the tar file
 sudo tar xzf nagioscore.tar.gz
-sudo rm -rf nagioscore.tar.gz
 sudo cd nagioscore-nagios-4.4.5
 # compiling nagios
 sudo ./configure
@@ -45,7 +44,6 @@ sudo yum install -y perl-Net-SNMP
 cd /usr/src
 sudo wget --no-check-certificate -O nagios-plugins.tar.gz https://github.com/nagios-plugins/nagios-plugins/archive/release-2.2.1.tar.gz
 sudo tar xzf nagios-plugins.tar.gz
-sudo rm -rf nagios-plugins.tar.gz
 cd nagios-plugins-release-2.2.1
 # compile and install nagios plugin
 sudo ./tools/setup
