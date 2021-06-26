@@ -1,3 +1,4 @@
+# must be root for the installation
 # best pratice to not mess up your centos box, clone your centos7 and practice there
 # open your Oracle VM manager then right click on yur centos box
 # click on clone
