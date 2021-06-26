@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # must be root for the installation
-su - root
+
 # disable selinux 
 sed -i 's/SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config
 # you could disable it manually check the manual page if you want to
